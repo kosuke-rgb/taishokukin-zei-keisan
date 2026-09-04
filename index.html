@@ -39,6 +39,34 @@
   "inLanguage": "ja"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "退職金には本当に税金の優遇がありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。退職金は「退職所得控除」という大きな非課税枠が設けられており、勤続年数が長いほど控除額も大きくなります。さらに控除後の金額は原則として1/2に圧縮してから課税されるため、給与所得と比べて税負担がかなり軽くなる仕組みです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "勤続年数が短いと税金が高くなるのはなぜですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "2022年の税制改正により、勤続5年以下の一般社員（役員等を除く）は、退職所得控除後の金額のうち300万円を超える部分について1/2課税の優遇が適用されなくなりました。転職が多く、1社あたりの勤続年数が短くなりがちな方は、想定より手取りが少なくなる場合があるため注意が必要です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "役員と一般社員で計算方法は違いますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "役員等（取締役・監査役など）は、勤続5年以下の場合は控除後の金額全体に1/2課税の優遇が適用されません。一般社員の「300万円を超える部分のみ優遇なし」というルールより厳しい扱いになります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "退職所得控除額はどう決まりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "勤続20年以下は「40万円×勤続年数」（最低80万円）、20年を超える部分は「800万円＋70万円×（勤続年数−20年）」で計算します。たとえば勤続10年なら400万円、勤続25年なら800万円＋70万円×5年＝1,150万円が非課税枠の目安です。" }
+    }
+  ]
+}
+</script>
 <style>
 :root {
   --bg: #ffffff;
@@ -162,6 +190,19 @@ footer.site-footer {
 }
 footer.site-footer p { margin: 0 0 0.5rem; }
 footer.site-footer a { color: var(--accent); }
+
+.faq-item { border-bottom: 1px solid var(--line); padding: 0.9rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-item summary {
+  cursor: pointer; font-weight: 700; font-size: 0.92rem; list-style: none;
+  position: relative; padding-right: 1.6rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; position: absolute; right: 0; top: 0; color: var(--accent); font-weight: 700; font-size: 1.1rem;
+}
+.faq-item[open] summary::after { content: '−'; }
+.faq-item p { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.88rem; }
 </style>
 </head>
 <body>
@@ -245,6 +286,26 @@ footer.site-footer a { color: var(--accent); }
       data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
+
+  <section>
+    <h2>よくある質問</h2>
+    <details class="faq-item">
+      <summary>退職金には本当に税金の優遇がありますか？</summary>
+      <p>はい。退職金は「退職所得控除」という大きな非課税枠が設けられており、勤続年数が長いほど控除額も大きくなります。さらに控除後の金額は原則として1/2に圧縮してから課税されるため、給与所得と比べて税負担がかなり軽くなる仕組みです。</p>
+    </details>
+    <details class="faq-item">
+      <summary>勤続年数が短いと税金が高くなるのはなぜですか？</summary>
+      <p>2022年の税制改正により、勤続5年以下の一般社員（役員等を除く）は、退職所得控除後の金額のうち300万円を超える部分について1/2課税の優遇が適用されなくなりました。転職が多く、1社あたりの勤続年数が短くなりがちな方は、想定より手取りが少なくなる場合があるため注意が必要です。</p>
+    </details>
+    <details class="faq-item">
+      <summary>役員と一般社員で計算方法は違いますか？</summary>
+      <p>役員等（取締役・監査役など）は、勤続5年以下の場合は控除後の金額全体に1/2課税の優遇が適用されません。一般社員の「300万円を超える部分のみ優遇なし」というルールより厳しい扱いになるため、このツールでは「役員等である」のチェックボックスで切り替えて計算できます。</p>
+    </details>
+    <details class="faq-item">
+      <summary>退職所得控除額はどう決まりますか？</summary>
+      <p>勤続20年以下は「40万円×勤続年数」（最低80万円）、20年を超える部分は「800万円＋70万円×（勤続年数−20年）」で計算します。たとえば勤続10年なら400万円、勤続25年なら800万円＋70万円×5年＝1,150万円が非課税枠の目安です。</p>
+    </details>
+  </section>
 
   <section class="contact-box">
     <h2>ご意見・追加してほしい機能</h2>
