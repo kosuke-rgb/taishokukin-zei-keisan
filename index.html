@@ -190,7 +190,7 @@ tr.total td { font-weight: 700; }
 tr.total { background: var(--best-bg); }
 
 .ref-table { overflow-x: auto; }
-.ref-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 460px; }
+.ref-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 0; }
 .ref-table th, .ref-table td { padding: 0.5rem 0.5rem; border-bottom: 1px solid var(--line); text-align: left; }
 .ref-table td.num { font-variant-numeric: tabular-nums; text-align: right; }
 
@@ -271,6 +271,15 @@ footer.site-footer a { color: var(--accent); }
 .breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.1rem; }
 .breadcrumb a { color: var(--accent); text-decoration: none; }
 .breadcrumb a:hover { text-decoration: underline; }
+/* スマホで表が画面からはみ出さないように（2026-11-17） */
+@media (max-width: 600px) {
+  .ref-table table { font-size: 0.8rem; }
+  .ref-table th, .ref-table td { padding: 0.45rem 0.3rem; }
+  .ref-table th, .ref-table td:first-child { white-space: normal; }
+  .ref-table td.nw { white-space: nowrap; }
+  .ref-table th:first-child, .ref-table td:first-child { min-width: 5em; position: sticky; left: 0; z-index: 1; background: var(--bg); box-shadow: 1px 0 0 var(--line); }
+  .ref-table tr.best td:first-child, .ref-table tr.total td:first-child, .ref-table tr.next td:first-child, .ref-table tr.highlight td:first-child { background: var(--best-bg, var(--bg)); }
+}
 </style>
 </head>
 <body>
@@ -349,13 +358,13 @@ footer.site-footer a { color: var(--accent); }
       <table>
         <thead><tr><th>勤続年数</th><th class="num">退職所得控除額</th></tr></thead>
         <tbody>
-          <tr><td>5年</td><td class="num">200万円</td></tr>
-          <tr><td>10年</td><td class="num">400万円</td></tr>
-          <tr><td>15年</td><td class="num">600万円</td></tr>
-          <tr><td>20年</td><td class="num">800万円</td></tr>
-          <tr><td>25年</td><td class="num">1,150万円</td></tr>
-          <tr><td>30年</td><td class="num">1,500万円</td></tr>
-          <tr><td>35年</td><td class="num">1,850万円</td></tr>
+          <tr><td>5年</td><td class="num nw">200万円</td></tr>
+          <tr><td>10年</td><td class="num nw">400万円</td></tr>
+          <tr><td>15年</td><td class="num nw">600万円</td></tr>
+          <tr><td>20年</td><td class="num nw">800万円</td></tr>
+          <tr><td>25年</td><td class="num nw">1,150万円</td></tr>
+          <tr><td>30年</td><td class="num nw">1,500万円</td></tr>
+          <tr><td>35年</td><td class="num nw">1,850万円</td></tr>
         </tbody>
       </table>
     </div>
@@ -369,12 +378,12 @@ footer.site-footer a { color: var(--accent); }
       <table>
         <thead><tr><th>項目</th><th class="num">金額</th></tr></thead>
         <tbody>
-          <tr><td>① 退職所得控除額（40万円×10年）</td><td class="num">400万円</td></tr>
-          <tr><td>② 控除後の金額（500万円−①）</td><td class="num">100万円</td></tr>
-          <tr><td>③ 課税退職所得金額（②×1/2、勤続5年超のため優遇適用）</td><td class="num">50万円</td></tr>
+          <tr><td>① 退職所得控除額（40万円×10年）</td><td class="num nw">400万円</td></tr>
+          <tr><td>② 控除後の金額（500万円−①）</td><td class="num nw">100万円</td></tr>
+          <tr><td>③ 課税退職所得金額（②×1/2、勤続5年超のため優遇適用）</td><td class="num nw">50万円</td></tr>
           <tr><td>④ 所得税（復興特別所得税込み）</td><td class="num">▲2.6万円</td></tr>
           <tr><td>⑤ 住民税（③×10%）</td><td class="num">▲5.0万円</td></tr>
-          <tr class="total"><td>手取り退職金</td><td class="num">約492.4万円</td></tr>
+          <tr class="total"><td>手取り退職金</td><td class="num nw">約492.4万円</td></tr>
         </tbody>
       </table>
     </div>
@@ -397,13 +406,13 @@ footer.site-footer a { color: var(--accent); }
       <table style="white-space:nowrap">
         <thead><tr><th>退職金・勤続年数</th><th class="num">税金（所得税＋住民税）</th><th class="num">手取り</th></tr></thead>
         <tbody>
-          <tr><td>300万円・5年</td><td class="num">75,525円</td><td class="num">2,924,475円</td></tr>
-          <tr><td>500万円・10年</td><td class="num">75,525円</td><td class="num">4,924,475円</td></tr>
-          <tr><td>800万円・15年</td><td class="num">151,050円</td><td class="num">7,848,950円</td></tr>
-          <tr><td>1,000万円・20年</td><td class="num">151,050円</td><td class="num">9,848,950円</td></tr>
-          <tr><td>1,500万円・25年</td><td class="num">264,337円</td><td class="num">14,735,663円</td></tr>
-          <tr><td>2,000万円・30年</td><td class="num">405,703円</td><td class="num">19,594,297円</td></tr>
-          <tr><td>2,500万円・38年</td><td class="num">345,072円</td><td class="num">24,654,928円</td></tr>
+          <tr><td>300万円・5年</td><td class="num nw">75,525円</td><td class="num nw">2,924,475円</td></tr>
+          <tr><td>500万円・10年</td><td class="num nw">75,525円</td><td class="num nw">4,924,475円</td></tr>
+          <tr><td>800万円・15年</td><td class="num nw">151,050円</td><td class="num nw">7,848,950円</td></tr>
+          <tr><td>1,000万円・20年</td><td class="num nw">151,050円</td><td class="num nw">9,848,950円</td></tr>
+          <tr><td>1,500万円・25年</td><td class="num nw">264,337円</td><td class="num nw">14,735,663円</td></tr>
+          <tr><td>2,000万円・30年</td><td class="num nw">405,703円</td><td class="num nw">19,594,297円</td></tr>
+          <tr><td>2,500万円・38年</td><td class="num nw">345,072円</td><td class="num nw">24,654,928円</td></tr>
         </tbody>
       </table>
     </div>
